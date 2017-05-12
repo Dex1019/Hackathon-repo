@@ -4,7 +4,7 @@ from CustomUser.models import User
 
 class Exam(models.Model):
     created = models.DateTimeField(auto_now_add=True)
-    name = models.CharField(max_length=500,unique=True)
+    name = models.CharField(max_length=500,primary_key=True)
     registrationStartDate = models.DateTimeField()
     registrationEndDate = models.DateTimeField()
     days = models.IntegerField()
@@ -18,29 +18,42 @@ class Exam(models.Model):
         return self.name
 
 
+class City(models.Model):
+    name = models.CharField(max_length=1000)
+    def_long = models.FloatField()
+    def_lat = models.FloatField()
+
+    def __str__(self):
+        return (self.name)
+
+
 class Center(models.Model):
     name = models.CharField(max_length=500)
-    city = models.CharField(max_length=100)
+    city = models.ForeignKey(City, related_name='City')
     state = models.CharField(max_length=100)
     latitude = models.FloatField()
     longitude = models.FloatField()
-    capicity = models.IntegerField()
-    examid = models.ForeignKey(Exam)
-
-    class Meta:
-        ordering=('state','city')
 
     def __str__(self):
         return self.name
 
 
 class ExamSlot(models.Model):
-    examid = models.ForeignKey(Exam)
+    examid = models.ForeignKey(Exam, related_name='exam')
     slotid = models.TextField(max_length=1000,primary_key=True)
-    centerid = models.ForeignKey(Center)
     date = models.DateField()
     time = models.TimeField()
-    vaccant = models.IntegerField(default=0)
 
     def __str__(self):
-        return  self.Slotid
+        return self.slotid
+
+class Vacant(models.Model):
+    slotid = models.ForeignKey(ExamSlot)
+    centerid = models.ForeignKey(Center)
+    avl_seats = models.IntegerField()
+    capicity = models.IntegerField()
+
+    def __str__(self):
+        return (self.slotid.slotid + "-" + self.centerid.name)
+
+

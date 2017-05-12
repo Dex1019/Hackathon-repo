@@ -4,3 +4,5 @@ from .models import *
 admin.site.register(Exam)
 admin.site.register(Center)
 admin.site.register(ExamSlot)
+admin.site.register(Vacant)
+admin.site.register(City)

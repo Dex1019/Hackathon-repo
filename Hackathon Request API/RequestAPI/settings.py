@@ -13,7 +13,7 @@ SECRET_KEY = 'xh#!dx*ajk9$o&$u42kbsl3=v+r+@hbi4#+=he04mbm$tayl%e'
 # SECURITrY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['139.59.79.39','localhost',]
 
 
 # Application definition
@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ExamCreation.apps.ExamcreationConfig',
     'CustomUser.apps.CustomuserConfig',
+    'UserRegistration.apps.UserregistrationConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -111,3 +113,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'CustomUser.User'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

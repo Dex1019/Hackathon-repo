@@ -3,10 +3,24 @@ from .models import Exam,ExamSlot,Center
 from CustomUser.models import User
 
 class ExamSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Exam
-        fields = ('name', 'registrationStartDate', 'registrationEndDate', 'days', 'slots', 'owner')
+        fields = ('name',)
+
+
+class ExamSlotSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ExamSlot
+        fields = ('date', 'time')
+
+
+class CenterSerializer(serializers.ModelSerializer):
+    City = serializers.ReadOnlyField(source='city.name')
+    class Meta:
+        model = Center
+        fields = "__all__"
+
 
 
