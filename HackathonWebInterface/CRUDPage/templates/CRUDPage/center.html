@@ -1,0 +1,53 @@
+{% include 'CRUDPage/base.html' %}
+{% include 'CRUDPage/navbar.html' %}
+<div id="wrapper">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-header text-center">Add Centers</h1>
+            </div>
+        </div>
+
+    <form method="post" action=".">
+         {% csrf_token %}
+    <span>Location:</span>
+    <input type="text" id="txtPlaces" name="txtPlaces" onclick="unlock();"style="width: 400px" placeholder="Enter a location" required>
+    <button id="toggle" onclick="geocoding();">Verify</button><br><br>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA_DbkZHYDWVDPiX0ifomNyMFbla101hOc&libraries=places" sync ></script>
+    <script type="text/javascript">
+    var latitude;
+    var longitude;
+    var countryRestrict = {'country': 'in'};
+        google.maps.event.addDomListener(window, 'load', function () {
+            var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'),{componentRestrictions: countryRestrict});
+            google.maps.event.addListener(places, 'place_changed');
+        });
+
+        function geocoding ()
+{
+
+            var geocoder = new google.maps.Geocoder();
+            var address =document.getElementById("txtPlaces").value;
+
+geocoder.geocode( { 'address': address}, function(results, status) {
+
+  if (status == google.maps.GeocoderStatus.OK) {
+    latitude = results[0].geometry.location.lat();
+    longitude = results[0].geometry.location.lng();
+
+    document.getElementById("lat").value = latitude;
+    document.getElementById("long").value = longitude;
+
+  }
+});
+     }
+
+</script>
+
+ <span>Latitude: </span>   <input type="text" name='latitude' id="lat"><br><br>
+ <span>Longitude: </span>   <input type="text" name="longitude" id="long"> <br><br>
+       <input id="submit" type="submit" value="submit" class="btn btn-primary">
+    </form>
+</div>
+    </body>
+</html>

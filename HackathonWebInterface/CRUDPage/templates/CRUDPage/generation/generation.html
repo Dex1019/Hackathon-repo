@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>CSS Registration Form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'CRUDPage/generation/css/default.css' %}"/>
+    </head>
+    <body>
+        <form action="" class="register">
+            <h1>Admit Card</h1>
+            <fieldset class="row1">
+                <img src="{{ slot.slotid }}{{ student.admitid }}.png" alt=""/>
+                <legend>Details</legend>
+                <p>
+                    <label>Application Id</label>
+                    <label>{{ student.admitid }}</label>
+                    <label>Name of Examine</label>
+                    <label> {{ student.name }}</label>
+                </p>
+                <p>
+                    <label>Father's Name</label>
+                    <label> {{ student.fathername }}</label>
+                    <label>Center</label>
+                    <label>{{ center}}</label>
+                </p>
+            </fieldset>
+            <fieldset class="row4">
+                <legend>Instructions</legend>
+                 <ul>
+                    <li>This admit card must be presented for verification along with atleast one original valid identification card.</li>
+                    <li>Please report to the examination venue atleast one hour before the commencement of the examination for identity verfication.</li>
+                    <li>Only black/blue ball point pen is allowed to mark in the OMR sheets.</li>
+                 </ul>
+            </fieldset>
+        </form>
+    </body>
+</html>
+
+
+
+

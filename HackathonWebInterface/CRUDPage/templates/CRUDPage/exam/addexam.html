@@ -1,0 +1,112 @@
+{% include 'CRUDPage/base.html' %}
+{% block body %}
+    <div id="wrapper">
+    {% include 'CRUDPage/navbar.html' %}
+        <div id="page-wrapper">
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary" style="margin-top: 10px;">
+
+                <div class="panel-heading">
+                    <div class="panel-title">Exam Entry</div>
+                    <!--<div style="float:right; font-size: 80%; position: relative; top:-10px; padding-bottom:10px; ">
+                        <a href="#"></a>
+                    </div>-->
+                </div>
+                {% if Errors %}
+                    {% for i in Errors %}
+                        <div class="alert alert-danger alert-dismissable" role="alert" >
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           {{ i }} has some Errors
+       </div>
+                    {% endfor %}
+                {% endif %}
+                <form action="." method="post" class="form-horizontal" style="padding:20px;">
+                    {% csrf_token %}
+                    <fieldset>
+                        <!-- Form Name -->
+                        <!--<legend>Exam Entry</legend>-->
+
+                        <!-- Exam Name -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="id_name">Exam Name</label>
+                            <div class="col-md-6">
+                                <input id="id_name" type="text" name="name" placeholder="Enter your Exam" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <!-- Exam center-->
+                        <!--<div class="form-group">
+                            <label class="col-md-4 control-label" for="exam-center">Exam center</label>
+                            <div class="col-md-6">
+                                <input id="exam-center" name="exam-center" type="text" placeholder="Enter exam center" class="form-control input-md" required="">
+                            </div>
+                        </div>-->
+
+
+
+                        <!-- Registration Start Date-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="id_registrationStartDate">Registration Start Date </label>
+                            <div class="col-md-6">
+                                <input id="id_registrationStartDate" name="registrationStartDate" type="text" placeholder="YYYY/MM/DD" class="datepicker form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <!-- Registration End Date-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="id_registrationEndDate">Registration End Date</label>
+                            <div class="col-md-6">
+                                <input id="id_registrationEndDate" name="registrationEndDate" type="text" placeholder="YYYY/MM/DD" class=" datepicker form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <!--  Days-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="id_days">Instance Of Same Exam </label>
+                            <div class="col-md-6">
+                                <input id="id_days" name="days" type="number" min="1" placeholder="Enter Number of Days" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <!--  Slots-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="id_slots">No of Slots </label>
+                            <div class="col-md-6">
+                                <input id="id_slots" name="slots" type="number" min="1" placeholder="Enter Number of Days" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+
+                        <!--Submit Button-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <button name="submit" >Submit</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+
+
+
+                </form>
+
+
+            </div>
+            <!--End of panel-->
+</div>
+
+
+
+
+
+        </div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,566 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+
+    <meta charset="utf-8" />
+    <!-- favicon icon  -->
+    <!--<link rel="apple-touch-icon" sizes="76x76" href="assets/img/images.jpg">
+    <link rel="icon" type="image/png" href="assets/img/images.jpg">-->
+
+
+    <!-- compatibility for chrome and Microsoft edge -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+    <!-- Responsive to mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+    <!--Important css files -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+
+
+
+
+    <!--Custom styles for this template -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'Student/assets/css/logo.css'%}" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            background-color: #eeeeee;
+        }
+        
+        legend {
+            border-color: black;
+        }
+        
+        panel {
+            background-color: #f5f5f5;
+        }
+        
+        .form-group.required .control-label:after {
+            content: "*";
+            color: red;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <!-- Navbar-->
+    <div class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img class="img-responsive" src="assets/img/logo2/header66.png" alt="Ministry_logo">
+                </a>
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+                <a class="navbar-brand" href="#">Hackathon-logo</a>-->
+                <!--<img src="# " alt="hackathon-logo" height="200px" width="200px" /a>-->
+            </div>
+
+
+            <!-- Section for mobile view-->
+            <!--<div class="navbar-collapse collapse">
+                <ul class="nav navbar-right navbar-nav ">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>-->
+
+        </div>
+        <!--End of container-->
+    </div>
+    <!-- Navbar End -->
+
+
+
+
+    <!-- Form Section-->
+    <div class="container">
+        <div class="row">
+            <form class="form-horizontal" action="." method="post">
+                {% csrf_token %}
+
+                <fieldset>
+                    <!-- Form Name -->
+                    <!--<legend>Registration Form</legend>-->
+
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <div class="panel-title">Registration Form</div>
+                        </div>
+
+                        <!-- First Name-->
+                        <div class="form-group required" style="margin-top: 20px;">
+                            <label class="col-md-4 control-label" for="first name">First Name </label>
+                            <div class="col-md-5">
+                                <input id="first-Name" name="name" type="text" placeholder="firstname" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+
+
+                        <!-- DOB-->
+                        <div class="form-group required">
+                            <label class="col-md-4 control-label " for="dob ">DOB </label>
+                            <div class="col-md-5 ">
+                                <input id="date" name="dob" type="text " placeholder="DD/MM/YYYY " class="form-control input-md " required=" ">
+
+                            </div>
+                        </div>
+
+                        <!-- Father's Name-->
+                        <div class="form-group required">
+                            <label class="col-md-4 control-label " for="fathers name ">Father's Name </label>
+                            <div class="col-md-5 ">
+                                <input id="fathers-name " name="fathersname " type="text " placeholder="father 's name" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <!--Section for Differently Abled-->
+                        <div class="form-group ">
+
+                            <label class="col-md-4 control-label" for="check_critiria"> Female</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span>
+                                     <input type="checkbox" name="female"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Section for Differently Abled-->
+                        <div class="form-group ">
+
+                            <label class="col-md-4 control-label" for="check_critiria"> Differently Abled</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span>
+                                     <input type="checkbox" name="diffrently_abled"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Adhar number-->
+                        <div class="form-group required">
+                            <label class="col-md-4 control-label" for="last name">Adhar Number </label>
+                            <div class="col-md-5">
+                                <input id="adharNo" name="adharnumber" type="text" placeholder="Enter your Adhar Number" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <!-- Mobile number  input-->
+                        <div class="form-group required">
+                            <label class="col-md-4 control-label" for="mobilenumber">Mobile Number </label>
+                            <div class="col-md-5">
+                                <input id="mobilenumber" name="mobilenumber" type="text" placeholder="Mobile Number" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <!-- Email input-->
+                        <div class="form-group required">
+                            <label class="col-md-4 control-label" for="emailId">Email Id </label>
+                            <div class="col-md-5">
+                                <input id="emailId" name="email" type="text" placeholder="user@gmail.com" class="form-control input-md" required="">
+                            </div>
+                        </div>
+                        <!-- Correspondence Address 2-->
+                        <div class="form-group required">
+                            <label class="col-md-4 control-label" for="occupation">Correspondence Address </label>
+
+                            <div class="col-md-5">
+
+                                <input id="txtPlaces2" onclick="unlock2();" type="text" placeholder="Enter a location (place, city,india)" class="form-control input-md" name="correspondence" required="" />
+                                <br>
+
+                            </div>
+                        </div>
+
+                        <!-- Permanent Address -->
+                        <div class="form-group required">
+                            <label class="col-md-4 control-label" for="occupation">Permanent Address </label>
+
+                            <div class="col-md-5">
+
+                                <input id="txtPlaces" onclick="unlock();" name="permanent" type="text" placeholder="Enter a location (place, city,india)" class="form-control input-md" required="" />
+                                <br>
+                            </div>
+                        </div>
+                        <!--Center deatails-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="gender" >Center Details </label>
+                            <div class="col-md-4">
+                                <label class="radio-inline" for="gender-0">
+                              <input type="radio" name="gender" id="center1" value=" Nearest to my location" onclick="$('#panel1').hide();$('#myMap').show();" ></a>
+                                   Nearest to my location
+                                   </label>
+                                <label class="radio-inline" for="gender-1">
+                                 <a><input type="radio" name="gender" id="center2" value="Prefered centres" onclick="$('#panel1').show();$('#myMap').hide()" ></a>
+                                   Preferred centres
+                                  </label>
+                            </div>
+                        </div>
+                        <div class="panel" id="panel1">
+                            <!-- Prefered centre 1-->
+                            <div class="form-group ">
+                                <label for="country" class="col-md-4 control-label" for="Prefered Address">Preferred Center 1</label>
+                                <div class="col-md-5">
+                                    <select id="country" name="preferred_center1" class="form-control">
+                            <option>Gwalior</option>
+                            <option>Bhopal</option>
+                            <option>Indore</option>
+                            <option>Sagar</option>
+
+                        </select>
+                                </div>
+                            </div>
+                            <!-- /.form-group -->
+
+
+                            <!-- Prefered centre 2-->
+                            <div class="form-group">
+                                <label for="country" class="col-md-4 control-label" for="Prefered Address">Preferred Center 2</label>
+                                <div class="col-md-5">
+                                    <select id="country" class="form-control" name="prefered_center2">
+                            <option>Gwalior</option>
+                            <option>Bhopal</option>
+                            <option>Indore</option>
+                            <option>Sagar</option>
+
+                        </select>
+                                </div>
+                            </div>
+                            <!-- /.form-group -->
+
+                            <!-- Prefered centre 3-->
+                            <div class="form-group">
+                                <label for="country" class="col-md-4 control-label" for="Prefered Address">Preferred Center 3</label>
+                                <div class="col-md-5">
+                                    <select name="prefered_center3" id="country" class="form-control">
+                          <option>Gwalior</option>
+                            <option>Bhopal</option>
+                            <option>Indore</option>
+                            <option>Sagar</option>
+
+                        </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <!-- /.form-group -->
+
+
+
+                        <!-- Prepended checkbox -->
+                        <div class="form-group ">
+                            <label class="col-md-4 control-label" for="check_critiria"></label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                     <input type="checkbox">
+                               </span>
+                                    <input id="check_critiria" name="check_critiria" class="form-control" type="text" placeholder="I hereby declare that the details furnished above are true and correct to the best of my knowledge . " required="" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="text" name="latitude" id="latitude" placeholder="Latitude" />
+                         <input type="text" name="longitude" id="longitude" placeholder="Longitude" />
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="submit"></label>
+                            <div class="col-md-4">
+                                <button id="submit" name="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </fieldset>
+                <!--end of fieldset-->
+            </form>
+            <!--end of form-->
+        </div>
+    </div>
+    <!-- End of Container-->
+
+
+
+
+    <!--google pin-point map -->
+    <div class="container">
+
+
+        <div id="myMap"> </div>
+        <br>
+        <input id="address" type="text" style="width:600px;" />
+
+        <div>
+            <br>
+            <input type="text" id="latitude" placeholder="Latitude" />
+            <input type="text" id="longitude" placeholder="Longitude" />
+        </div>
+
+        <style>
+            #myMap {
+                height: 400px;
+                width: 101%;
+            }
+        </style>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false">
+        </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+        </script>
+        <script type="text/javascript">
+            var map;
+            var marker;
+            var myLatlng = new google.maps.LatLng(28.7004, 77.4413);
+            var geocoder = new google.maps.Geocoder();
+            var infowindow = new google.maps.InfoWindow();
+
+            function initialize() {
+                var mapOptions = {
+                    zoom: 18,
+                    center: myLatlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                map = new google.maps.Map(document.getElementById("myMap"), mapOptions);
+
+                marker = new google.maps.Marker({
+                    map: map,
+                    position: myLatlng,
+                    draggable: true
+                });
+
+                geocoder.geocode({
+                    'latLng': myLatlng
+                }, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        if (results[0]) {
+                            $('#latitude,#longitude').show();
+                            $('#address').val(results[0].formatted_address);
+                            $('#latitude').val(marker.getPosition().lat());
+                            $('#longitude').val(marker.getPosition().lng());
+                            infowindow.setContent(results[0].formatted_address);
+                            infowindow.open(map, marker);
+                        }
+                    }
+                });
+
+                google.maps.event.addListener(marker, 'dragend', function() {
+
+                    geocoder.geocode({
+                        'latLng': marker.getPosition()
+                    }, function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            if (results[0]) {
+                                $('#address').val(results[0].formatted_address);
+                                $('#latitude').val(marker.getPosition().lat());
+                                $('#longitude').val(marker.getPosition().lng());
+                                infowindow.setContent(results[0].formatted_address);
+                                infowindow.open(map, marker);
+                            }
+                        }
+                    });
+                });
+
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+        <div>
+            <br><br><br>
+
+
+            <!--Footer Section-->
+            <!--<div class="fluid-container">
+                <footer class=" footer navbar-bottom">
+
+
+                    <table>
+                        <td>
+                            <img class="img-responsive" src="assets/img/logo2/footer67.png" alt="Ministry_logo">
+                        </td>
+                    </table>
+
+                </footer>
+            </div>-->
+
+
+
+
+
+
+            <!--Google autofill-map script 1-->
+
+            <script type="text/javascript">
+                var countryRestrict = {
+                    'country': 'in'
+                };
+                google.maps.event.addDomListener(window, 'load', function() {
+                    var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'), {
+                        componentRestrictions: countryRestrict
+                    });
+                    google.maps.event.addListener(places, 'place_changed');
+                });
+
+                function geocoding()
+
+
+                {
+                    if (document.getElementById('txtPlaces').value == "" ||
+                        document.getElementById('txtPlaces').value == undefined) {
+                        alert("Please Enter an Address");
+                    } else {
+                        var geocoder = new google.maps.Geocoder();
+                        var address = document.getElementById("txtPlaces").value;
+
+                        geocoder.geocode({
+                            'address': address
+                        }, function(results, status) {
+
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                var latitude = results[0].geometry.location.lat();
+                                var longitude = results[0].geometry.location.lng();
+
+                                myFunction();
+
+                            }
+                        });
+                    }
+
+                }
+
+                function myFunction() {
+                    if (document.getElementById("toggle").innerHTML = "Verify Address")
+
+                    {
+                        document.getElementById("toggle").innerHTML = "Verified";
+                        document.getElementById('toggle').disabled = true;
+                        document.getElementById('txtPlaces').readOnly = true;
+
+                    }
+                }
+
+                function unlock() {
+                    if (document.getElementById("toggle").innerHTML = "Verified")
+
+                    {
+                        document.getElementById("toggle").innerHTML = "Verify Address";
+                        document.getElementById('toggle').disabled = false;
+                        document.getElementById('txtPlaces').readOnly = false;
+                        document.getElementById('txtPlaces').value = "";
+
+                    }
+
+                }
+            </script>
+
+
+            <!--Google autofill map script 2-->
+
+
+
+            <script type="text/javascript">
+                var countryRestrict = {
+                    'country': 'in'
+                };
+                google.maps.event.addDomListener(window, 'load', function() {
+                    var places2 = new google.maps.places.Autocomplete(document.getElementById('txtPlaces2'), {
+                        componentRestrictions: countryRestrict
+                    });
+                    google.maps.event.addListener(places2, 'place_changed');
+                });
+
+                function geocoding2()
+
+
+                {
+                    if (document.getElementById('txtPlaces2').value == "" ||
+                        document.getElementById('txtPlaces2').value == undefined) {
+                        alert("Please Enter an Address");
+                    } else {
+                        var geocoder2 = new google.maps.Geocoder();
+                        var address2 = document.getElementById("txtPlaces").value;
+
+                        geocoder2.geocode({
+                            'address': address2
+                        }, function(results, status) {
+
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                var latitude = results[0].geometry.location.lat();
+                                var longitude = results[0].geometry.location.lng();
+                                // alert(latitude);
+                                // alert(longitude);
+                                myFunction2();
+
+                            }
+                        });
+                    }
+
+                }
+
+                function myFunction2() {
+                    if (document.getElementById("toggle2").innerHTML = "Verify Address")
+
+                    {
+                        document.getElementById("toggle2").innerHTML = "Verified";
+                        document.getElementById('toggle2').disabled = true;
+                        document.getElementById('txtPlaces2').readOnly = true;
+
+                    }
+                }
+
+                function unlock2() {
+                    if (document.getElementById("toggle2").innerHTML = "Verified")
+                    {
+                        document.getElementById("toggle2").innerHTML = "Verify Address";
+                        document.getElementById('toggle2').disabled = false;
+                        document.getElementById('txtPlaces2').readOnly = false;
+                        document.getElementById('txtPlaces2').value = "";
+
+                    }
+
+                }
+            </script>
+
+
+
+
+
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="{% static 'Student/assets/js/bootstrap.min.js' %} "></script>
+
+
+</body>
+
+</html>

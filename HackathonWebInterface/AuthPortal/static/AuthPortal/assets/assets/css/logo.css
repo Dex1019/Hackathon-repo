@@ -1,0 +1,32 @@
+  
+        .navbar {
+            
+            background-color: #ffcc28;
+            width: 100%
+        }
+	        .navbar-brand{
+	        	width: 100%;
+	        	height: 2%;
+	        }
+
+        
+        .footer {
+           
+            background-color: #fce658;
+            height: 15%;
+            width: 100%;
+        }
+        
+        .MainBody .navbar-brand {
+            height: 120	px;
+        }
+        
+        .MainBody .nav>li>a {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        
+        .Mainbody .navbar-toggle {
+            padding: 10px;
+            margin: 25px 15px 25px 0;
+        }

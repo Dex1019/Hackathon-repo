@@ -1,0 +1,26 @@
+{% include 'CRUDPage/base.html' %}
+{% block body %}
+    <div id="wrapper" class="-inverse">
+
+        <!-- Navigation -->
+    {% include 'CRUDPage/navbar.html' %}
+
+<div class="panel-success">
+    <!-- Main Body -->
+    <div id="page-wrapper">
+
+        <!-- /.row -->
+        <!-- 1st row for panel-->
+        <div class="panel panel-success" style="margin: 10px; margin-top: 40px;" >
+            <div class="panel-heading text-center" style="font-size: 20px; font-family:Helvetica, Arial, sans-serif"> Exam List</div>
+        <div class="row ">
+            {% include 'CRUDPage/exam/panel.html' %}
+
+        <!-- End of 2nd row-->
+    </div>
+            </div>
+    </div>
+    </div>
+    </div>
+    <!--End of wrapper-->
+{% endblock %}
